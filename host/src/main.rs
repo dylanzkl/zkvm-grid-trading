@@ -59,7 +59,7 @@ fn prove_transactions_with_ecdsa_verification(
     message: &[u8],
     signature: &Signature,
 ) -> Receipt {
-    let signature_input = (verifying_key.to_encoded_point(true), &*message, signature);
+    let signature_input = (verifying_key.to_encoded_point(true), message, signature);
 
 
     let env = ExecutorEnv::builder().write(&grid_request).unwrap()
